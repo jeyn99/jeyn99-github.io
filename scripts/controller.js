@@ -1,16 +1,17 @@
 // basic functionalities
 $(document).ready(function () {
+  var brokweAdd = "wss://test.mosquitto.org:8081/mqtt";
+  $("#add").val(brokweAdd);
   var top = $("#topicPub");
   var pload = $("#payload");
   var subscribeTopic = $("#topicSub");
   var time = new Date($.now());
-
-
+  
   $("#connectBtn").click(function (e) {
     e.preventDefault();
     $("#status").val("Connecting...");
 
-    client = mqtt.connect($("#add").val("wss://test.mosquitto.org:8081/mqtt"));
+    client = mqtt.connect(brokweAdd);
     client.on("connect", function () {
       $("#status").val("Successfully Connected");
 
