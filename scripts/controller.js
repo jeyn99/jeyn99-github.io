@@ -1,6 +1,6 @@
 // basic functionalities
 $(document).ready(function () {
-  var brokweAdd = "ws://broker.hivemq.com:8000/mqtt";
+  var brokweAdd = "wss://test.mosquitto.org:8081/mqtt";
   $("#add").val(brokweAdd);
   var top = $("#topicPub");
   var pload = $("#payload");
