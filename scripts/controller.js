@@ -10,7 +10,7 @@ $(document).ready(function () {
     e.preventDefault();
     $("#status").val("Connecting...");
 
-    client = mqtt.connect($("#add").val());
+    client = mqtt.connect($("#add").val("wss://test.mosquitto.org:8081/mqtt"));
     client.on("connect", function () {
       $("#status").val("Successfully Connected");
 
