@@ -17,10 +17,14 @@ $(document).ready(function () {
       $("#status").val("Successfully Connected");
 
       ($("#pubBtn").click(function () {
-        client.publish(top.val(), pload.val());
-        $("#PubDetails").show();
-        var row = "<tr><td>" + top.val() + "</td><td>" + pload.val() + "</td><td>" + time.toUTCString() + "</td></tr>";
-        $("#tb").append(row);
+        if (top.val() === "") {
+          alert("Fill up the topic!");
+        } else {
+          client.publish(top.val(), pload.val());
+          $("#PubDetails").show();
+          var row = "<tr><td>" + top.val() + "</td><td>" + pload.val() + "</td><td>" + time.toUTCString() + "</td></tr>";
+          $("#tb").append(row);
+        }
       }))
 
       $("#subBtn").click(function () {
