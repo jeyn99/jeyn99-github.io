@@ -18,7 +18,7 @@ $(document).ready(function () {
 
       ($("#pubBtn").click(function () {
         if (top.val() === "") {
-          alert("Fill up the topic!");
+          alert("Fill up the Publish Topic!");
         } else {
           client.publish(top.val(), pload.val());
           $("#PubDetails").show();
