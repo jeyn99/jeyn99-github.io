@@ -9,7 +9,7 @@ $(document).ready(function (e) {
           $('h2').empty();
           $('h2').append(click);
           client.subscribe('jane/fan/status')
-          client.publish('jane/fan/status', "Turned at " + click + " : " + time)
+          client.publish('jane/fan/status', "Turned at " + click + " : " +  new Date($.now()))
       })
   })
 })
