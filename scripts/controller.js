@@ -5,8 +5,8 @@ $(document).ready(function (e) {
     client.on("connect", function () {
         $(document).on('click', 'button', function () {
             var click = $(this).attr("id")
-            $('h2').empty();
-            $('h2').append(click);
+            $('span').empty();
+            $('span').append(click);
             client.subscribe('jane/fan/status')
             client.publish('jane/fan/status', "Turned at " + click + " : " + new Date($.now()))
         })
